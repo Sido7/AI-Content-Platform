@@ -39,11 +39,4 @@ flowchart TD
   end
   H <--> B
   H <--> A
-| Service                      | Description                                                                                | Repository                                                                        |
-| ---------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
-| 📰 **Aggregator Service**    | Crawls and aggregates articles from HTML/RSS websites, cleans data, and publishes events.  | [Aggregator Service Repo](https://github.com/yourusername/aggregator-service)     |
-| 🤖 **AI Processing Service** | Uses AI APIs (e.g., Gemini, OpenAI) to summarize, extract keywords, and analyze sentiment. | [AI Service Repo](https://github.com/yourusername/ai-service)                     |
-| 📚 **Article Service**       | Stores processed articles and exposes REST APIs for client apps.                           | [Article Service Repo](https://github.com/yourusername/article-service)           |
-| 👤 **User Service**          | Handles authentication, user profiles, roles, and permissions.                             | [User Service Repo](https://github.com/yourusername/user-service)                 |
-| 🔔 **Notification Service**  | Sends real-time notifications and updates via queues or pub/sub.                           | [Notification Service Repo](https://github.com/yourusername/notification-service) |
-| 🧱 **Common Library**        | Shared utilities, DTOs, and interfaces used across services.                               | [Common Lib Repo](https://github.com/yourusername/common-lib)                     |
+```
