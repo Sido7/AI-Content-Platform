@@ -1,21 +1,21 @@
 # 🧠 AI Content Platform — Microservices Architecture
 
-This repository serves as the **entry point (face repo)** for the **AI Content Platform**, a distributed microservices-based system designed to automate **content aggregation, analysis, and publishing** using AI.
+This repository serves as the **entry point (face repo)** for the **AI Content Platform**, a distributed microservices-based system designed to automate **content aggregation, AI-driven analysis, and personalized recommendations**.
 
-The platform is built with **Node.js**, **TypeScript**, and **modern backend technologies** like **Kafka**, **Redis**, **MongoDB**, and **Cloud Workers**, emphasizing **scalability**, **modularity**, and **performance**.
+The platform is built using **Node.js**, **TypeScript**, and a combination of **Redis**, **MongoDB**, and **MySQL**, emphasizing **modularity**, **scalability**, and **clean architecture**.
 
 ---
 
 ## 🚀 Overview
 
-The **AI Content Platform** is composed of multiple services, each responsible for a specific domain function.  
-Together, they form a robust ecosystem capable of:
+The **AI Content Platform** consists of multiple microservices, each responsible for a specific domain.  
+Together, they form a seamless pipeline that:
 
-- 📰 Fetching and aggregating articles from multiple sources  
-- 🤖 Summarizing and analyzing content using AI  
-- 🧩 Managing users, vendors, and permissions  
-- ⚡ Processing data asynchronously using queues and streams  
-- 📤 Exposing APIs for web and mobile clients  
+- 📰 Fetches and aggregates articles from multiple sources  
+- 🤖 Summarizes and analyzes content using AI  
+- 👤 Manages authentication, roles, and vendors  
+- 🎯 Delivers personalized recommendations  
+- ⚡ Processes data asynchronously via Redis queues  
 
 ---
 
@@ -25,18 +25,20 @@ Together, they form a robust ecosystem capable of:
 flowchart TD
   A[Aggregator Service] --> B[AI Processing Service]
   B --> C[Article Service]
-  C --> D[User Service]
-  C --> E[Notification Service]
-  E --> F[Redis Queue]
-  B --> G[(MongoDB)]
+  C --> D[Recommendation Service]
+  D --> E[Auth Service]
+  A --> G[(MongoDB)]
+  B --> G
   C --> G
-  D --> G
-  E --> G
+  E --> M[(MySQL)]
+  D --> M
   subgraph infra[Infrastructure]
     G
-    F
-    H[(Kafka Bus)]
+    M
+    R[(Redis Queue)]
   end
-  H <--> B
-  H <--> A
+  A <--> R
+  B <--> R
+  C <--> R
+  D <--> R
 ```
