@@ -19,6 +19,20 @@ Together, they form a seamless pipeline that:
 
 ---
 
+---
+
+## 📚 Related Repositories
+
+| Service | Description | Repository |
+|----------|--------------|-------------|
+| 📰 **Scrapper Service** | Crawls and aggregates articles from HTML/RSS websites, cleans data, and pushes it to Redis queues. | [Aggregator Service Repo](https://github.com/Sido7/scrapperService) |
+| 🤖 **AI Processing Service** | Consumes queued data and processes it using AI APIs (Gemini, OpenAI) to summarize, extract keywords, and classify sentiment. Stores processed articles in MongoDB and provides APIs for content retrieval and filtering. | [AI Service Repo](https://github.com/Sido7/aiService) |
+| 👤 **Auth Service** | Manages user registration, login, vendor onboarding, and role-based authentication using MySQL. | [Auth Service Repo](https://github.com/Sido7/AuthServiceAI) |
+| 🎯 **Recommendation Service** | Generates personalized article recommendations based on user interactions, preferences, or trends. | [Recommendation Service Repo](https://github.com/Sido7/Recommendation-Service) |
+| 🧱 **Redis Service** | Contains the basic setup for redis using the docker for messaging queue and caching | [Common Lib Repo](https://github.com/Sido7/redisService) |
+
+---
+
 ## 🧩 Architecture at a Glance
 
 ```mermaid
